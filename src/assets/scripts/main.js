@@ -1,3 +1,4 @@
+const css = require('../styles/main.scss');
 const WebFont = require('webfontloader');
 
 class App {
