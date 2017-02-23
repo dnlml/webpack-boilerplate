@@ -1,0 +1,19 @@
+{
+  "name": "webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "A frontend development boilerplate based on webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dnlml/webpack-boilerplate.git"
+  },
+  "author": "Daniele Meli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnlml/webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/dnlml/webpack-boilerplate#readme"
+}
