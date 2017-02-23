@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dnlml/webpack-boilerplate/issues"
   },
-  "homepage": "https://github.com/dnlml/webpack-boilerplate#readme"
+  "homepage": "https://github.com/dnlml/webpack-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
