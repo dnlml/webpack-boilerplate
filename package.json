@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/dnlml/webpack-boilerplate#readme",
   "devDependencies": {
+    "lodash": "^4.17.4",
+    "webfontloader": "^1.6.27",
     "webpack": "^2.2.1"
   }
 }
