@@ -9,8 +9,8 @@
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
   </script>
-<link href="assets/styles/main.min.css?a9861924d621e518706d" rel="stylesheet"></head>
+<link href="assets/styles/main.min.css?9db4304b09d730e1cd2f" rel="stylesheet"></head>
 <body>
   <h1>Hello World</h1>
-<script type="text/javascript" src="assets/scripts/main.min.js?a9861924d621e518706d"></script></body>
+<script type="text/javascript" src="assets/scripts/main.min.js?9db4304b09d730e1cd2f"></script></body>
 </html>

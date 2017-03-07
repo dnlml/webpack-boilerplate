@@ -14,7 +14,7 @@ App.prototype.init = function () {
 document.addEventListener('DOMContentLoaded', function () {
   WebFont.load({
     custom: {
-      families: []
+      families: ['']
     },
     active: function () {
       new App();
