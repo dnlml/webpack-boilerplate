@@ -1,7 +1,7 @@
 # Webpack-boilerplate
 _A boilerplate made with webpack supporting ES6, Sass, pug_
 
-###Start
+### Start
 `npm i`
 
 `npm run dev`
