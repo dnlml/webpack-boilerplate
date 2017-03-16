@@ -68,8 +68,6 @@ body {
 body {
   transition: opacity .5s;
   font-size: 1.6rem; }
-  .js body {
-    opacity: 0; }
   .wf-active body {
     opacity: 1; }
 
