@@ -4,19 +4,26 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
+const extractCss = new ExtractTextPlugin({ filename: 'assets/styles/main.min.css', allChunks: true });
+const extractSvg = new ExtractTextPlugin({ filename: 'assets/svg/sprite.svg' });
+const html = new HtmlWebpackPlugin({ filename: 'index.html', template: './src/index.pug', hash: true });
+const copyFiles = new CopyWebpackPlugin([ { from: 'src/assets/fonts', to: 'assets/fonts'}, { from: 'src/assets/images', to: 'assets/images'} ]);
+const writeFiles = new WriteFilePlugin();
+
 module.exports = {
   entry: './src/assets/scripts/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/scripts/main.min.js'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
+        use: extractCss.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: [{loader: 'css-loader'}, {loader: 'sass-loader'}]
         })
       }, {
         test: /\.js$/,
@@ -24,7 +31,12 @@ module.exports = {
         use: ['babel-loader']
       }, {
         test: /\.pug$/,
-        use: ['raw-loader', 'pug-html-loader']
+        use: [{loader: 'raw-loader'}, {loader: 'pug-html-loader'}]
+      }, {
+        test: /\.svg$/,
+        use: extractSvg.extract({
+          use: [{loader: 'svg-inline-loader'}]
+        })
       }
     ]
   },
@@ -35,20 +47,10 @@ module.exports = {
     open: true
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.pug',
-      hash: true
-    }),
-    new ExtractTextPlugin({
-      filename: 'assets/styles/main.min.css',
-      allChunks: true
-    }),
-    new CopyWebpackPlugin([
-      { from: 'src/assets/fonts', to: 'assets/fonts'},
-      { from: 'src/assets/svg', to: 'assets/svg'},
-      { from: 'src/assets/images', to: 'assets/images'}
-    ]),
-    new WriteFilePlugin()
+    html,
+    extractCss,
+    extractSvg,
+    copyFiles,
+    writeFiles
   ]
 }

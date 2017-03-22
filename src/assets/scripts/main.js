@@ -1,4 +1,7 @@
 const css = require('../styles/main.scss');
+const logoOne = require('svg-inline-loader!../svg/sprite/circle.svg');
+const logoTwo = require('svg-inline-loader!../svg/sprite/square.svg');
+
 const WebFont = require('webfontloader');
 
 class App {
