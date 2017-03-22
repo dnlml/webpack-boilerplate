@@ -35,7 +35,13 @@ module.exports = {
       }, {
         test: /\.svg$/,
         use: extractSvg.extract({
-          use: [{loader: 'svg-inline-loader'}]
+          use: [{
+            loader: 'svg-sprite-loader', 
+            options: {
+              name: '[name]',
+              prefixize: true
+            }
+          }]
         })
       }
     ]

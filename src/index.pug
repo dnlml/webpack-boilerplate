@@ -11,9 +11,11 @@ html(lang="en" class="no-js")
   body
     include includes/header.pug
     
-    .octopus
+    div
       h1 Hello World
       p This is a paragraph
     
-    include ../dist/assets/svg/sprite.svg
+    svg
+      use(xlink:href="assets/svg/sprite.svg#circle")
+    
     include includes/footer.pug

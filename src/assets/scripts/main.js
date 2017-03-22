@@ -1,6 +1,6 @@
 const css = require('../styles/main.scss');
-const logoOne = require('svg-inline-loader!../svg/sprite/circle.svg');
-const logoTwo = require('svg-inline-loader!../svg/sprite/square.svg');
+const sprite = require.context('../svg/sprite', false, /\.svg$/);
+sprite.keys().forEach(sprite);
 
 const WebFont = require('webfontloader');
 
