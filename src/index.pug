@@ -9,13 +9,17 @@ html(lang="en" class="no-js")
       document.documentElement.classList.remove("no-js")
       document.documentElement.classList.add("js")
   body
+    include includes/vars.pug
     include includes/header.pug
-    
+
     div
       h1 Hello World
-      p This is a paragraph
-    
+      p This is a paragraph with some text
+
     svg
-      use(xlink:href="assets/svg/sprite.svg#circle")
-    
+      use(xlink:href=svgPath + "circle")
+
+    svg
+      use(xlink:href=svgPath + "square")
+
     include includes/footer.pug

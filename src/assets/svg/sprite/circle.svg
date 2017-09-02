@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+   viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#000000;}
+  .st0{fill:#ff0000;}
 </style>
-<g>
-	<path class="st0" d="M25.5,44C14.7,44,6,35.3,6,24.5C6,13.7,14.7,5,25.5,5C36.3,5,45,13.7,45,24.5C45,35.3,36.3,44,25.5,44z"/>
-	<path d="M25.5,5.5c10.5,0,19,8.5,19,19s-8.5,19-19,19s-19-8.5-19-19S15,5.5,25.5,5.5 M25.5,4.5c-11,0-20,9-20,20s9,20,20,20
-		s20-9,20-20S36.5,4.5,25.5,4.5L25.5,4.5z"/>
-</g>
+  <path class="st0" d="M25.5,44C14.7,44,6,35.3,6,24.5C6,13.7,14.7,5,25.5,5C36.3,5,45,13.7,45,24.5C45,35.3,36.3,44,25.5,44z"/>
+  <path d="M25.5,5.5c10.5,0,19,8.5,19,19s-8.5,19-19,19s-19-8.5-19-19S15,5.5,25.5,5.5 M25.5,4.5c-11,0-20,9-20,20s9,20,20,20
+    s20-9,20-20S36.5,4.5,25.5,4.5L25.5,4.5z"/>
 </svg>

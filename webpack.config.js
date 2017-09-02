@@ -3,18 +3,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const extractCss = new ExtractTextPlugin({ filename: 'assets/styles/main.min.css', allChunks: true });
-const extractSvg = new ExtractTextPlugin({ filename: 'assets/svg/sprite.svg' });
 const html = new HtmlWebpackPlugin({ filename: 'index.html', template: './src/index.pug', hash: true });
-const copyFiles = new CopyWebpackPlugin([ { from: 'src/assets/fonts', to: 'assets/fonts'}, { from: 'src/assets/images', to: 'assets/images'} ]);
+const copyFiles = new CopyWebpackPlugin([{ from: 'src/assets/fonts', to: 'assets/fonts' }, { from: 'src/assets/images', to: 'assets/images' }]);
 const writeFiles = new WriteFilePlugin();
+const spriteLoader = new SpriteLoaderPlugin();
 
 module.exports = {
   entry: './src/assets/scripts/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/scripts/main.min.js'
+    filename: 'assets/scripts/main.min.js',
   },
   devtool: 'source-map',
   module: {
@@ -23,40 +24,37 @@ module.exports = {
         test: /\.scss$/,
         use: extractCss.extract({
           fallback: 'style-loader',
-          use: [{loader: 'css-loader'}, {loader: 'sass-loader'}]
-        })
+          use: [{ loader: 'css-loader' }, { loader: 'sass-loader' }],
+        }),
       }, {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       }, {
         test: /\.pug$/,
-        use: [{loader: 'raw-loader'}, {loader: 'pug-html-loader'}]
+        use: [{ loader: 'raw-loader' }, { loader: 'pug-html-loader' }],
       }, {
         test: /\.svg$/,
-        use: extractSvg.extract({
-          use: [{
-            loader: 'svg-sprite-loader', 
-            options: {
-              name: '[name]',
-              prefixize: true
-            }
-          }]
-        })
-      }
-    ]
+        loader: 'svg-sprite-loader',
+        include: path.resolve('./src/assets/svg/sprite'),
+        options: {
+          extract: true,
+          spriteFilename: './assets/svg/sprite.svg',
+        },
+      },
+    ],
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     stats: 'errors-only',
-    open: true
+    open: true,
   },
   plugins: [
     html,
     extractCss,
-    extractSvg,
     copyFiles,
-    writeFiles
-  ]
-}
+    writeFiles,
+    spriteLoader,
+  ],
+};
