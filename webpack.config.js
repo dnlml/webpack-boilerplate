@@ -41,6 +41,9 @@ module.exports = {
           extract: true,
           spriteFilename: './assets/svg/sprite.svg',
         },
+      }, {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        loader: 'url-loader?limit=100000'
       },
     ],
   },
