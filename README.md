@@ -10,4 +10,4 @@ use node v8.6.0
 
 or
 
-`npm run prod`
+`npm run build`

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "clean": "rimraf ./dist/*",
-    "prod": "npm run clean && webpack -p"
+    "build": "npm run clean && webpack -p"
   },
   "repository": {
     "type": "git",
