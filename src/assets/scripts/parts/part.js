@@ -1,13 +1,11 @@
-'use script';
-
 class Part {
-  constructor () {
+  constructor() {
     this.init();
   }
-};
 
-Part.prototype.init = function () {
-  console.log('Part: init');
-};
+  init() {
+    console.log('Part: init', this);
+  }
+}
 
 module.exports = Part;

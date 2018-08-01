@@ -12,6 +12,7 @@ const writeFiles = new WriteFilePlugin();
 const spriteLoader = new SpriteLoaderPlugin();
 
 module.exports = {
+  mode: 'development',
   entry: './src/assets/scripts/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

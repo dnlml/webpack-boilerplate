@@ -6,7 +6,7 @@ use node v8.11.1
 
 `npm i`
 
-`npm run dev`
+`npm start`
 
 or
 
